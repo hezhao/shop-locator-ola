@@ -44,7 +44,7 @@ MedicareDataSource.prototype.parse_ = function(csv) {
     features.add(this.FEATURES_.getById('Wheelchair-' + row.Wheelchair));
     features.add(this.FEATURES_.getById('Audio-' + row.Audio));
 
-    var position = new google.maps.LatLng(row.Ycoord, row.Xcoord);
+    var position = new google.maps.LatLng(row.Latitude, row.Longitude);
 
     var shop = this.join_([row.Shp_num_an, row.Shp_centre], ', ');
     var locality = this.join_([row.Locality, row.Postcode], ', ');
