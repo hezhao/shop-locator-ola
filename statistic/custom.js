@@ -27,7 +27,7 @@ var rendermap = function(latlng,scale){
 
   var view = new storeLocator.View(map, data, {
     geolocation: false,
-    features: data.getFeatures()
+    //xfeatures: data.getFeatures()
   });
 
   view.createMarker = function(store) {
@@ -61,7 +61,7 @@ var getLatlng=function(){
     }
     function errorCallback(e) {
       alert(e);
-      var latlng = {lat:38.016210, lng:-95.838746};
+      var latlng = {lat:38.016210, lng:-95.838746};//lat and lng of USA
       if(ifrender==false){
         rendermap(latlng,4);
         ifrender = true;
@@ -69,7 +69,7 @@ var getLatlng=function(){
     }
   } else {
     alert("Geolocation is not supported by this browser.");
-    var latlng = {lat:38.016210, lng:-95.838746};
+    var latlng = {lat:38.016210, lng:-95.838746};//lat and lng of USA
     if(ifrender==false){
       rendermap(latlng,4);
       ifrender = true;

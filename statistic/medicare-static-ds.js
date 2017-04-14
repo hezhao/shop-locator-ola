@@ -41,7 +41,7 @@ MedicareDataSource.prototype.parse_ = function(csv) {
   for (var i = 1, row; row = rows[i]; i++) {
     row = this.toObject_(headings, this.parseRow_(row));
     var features = new storeLocator.FeatureSet;
-    features.add(this.FEATURES_.getById('Wheelchair-' + row.Wheelchair));
+    //features.add(this.FEATURES_.getById('Wheelchair-' + row.Wheelchair));
     features.add(this.FEATURES_.getById('Audio-' + row.Audio));
 
     var position = new google.maps.LatLng(row.Latitude, row.Longitude);
@@ -52,7 +52,7 @@ MedicareDataSource.prototype.parse_ = function(csv) {
     var store = new storeLocator.Store(row.uuid, position, features, {
       title: row.Fcilty_nam,
       address: this.join_([shop, row.Street_add, locality], '<br>'),
-      hours: row.Hrs_of_bus
+      phone: row.Phone
     });
     stores.push(store);
   }
