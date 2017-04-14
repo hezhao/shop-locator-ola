@@ -2,6 +2,8 @@
 // - custom marker
 // - custom info window (using Info Bubble)
 // - custom info window content (+ store hours)
+ifrender = false;
+
 var ICON = new google.maps.MarkerImage('../img/olababy.png', null, null,
     new google.maps.Point(14, 13));
 
@@ -52,16 +54,25 @@ var getLatlng=function(){
 
       var latlng={lat: lat, lng: long};
       console.log(latlng);
-      rendermap(latlng,10);
+      if(ifrender==false){
+        rendermap(latlng,10);
+        ifrender = true;
       }
+    }
     function errorCallback(e) {
       alert(e);
       var latlng = {lat:38.016210, lng:-95.838746};
-      rendermap(latlng,4);
+      if(ifrender==false){
+        rendermap(latlng,4);
+        ifrender = true;
+      }
     }
   } else {
     alert("Geolocation is not supported by this browser.");
     var latlng = {lat:38.016210, lng:-95.838746};
-    rendermap(latlng,4);
+    if(ifrender==false){
+      rendermap(latlng,4);
+      ifrender = true;
+    }
   }
 }
