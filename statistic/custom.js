@@ -12,10 +12,10 @@ google.maps.event.addDomListener(window, 'load', function() {
   getLatlng();
 });
 
-var rendermap = function(latlng){
+var rendermap = function(latlng,scale){
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: new google.maps.LatLng(latlng.lat, latlng.lng),
-    zoom: 10,
+    zoom: scale,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
@@ -52,16 +52,16 @@ var getLatlng=function(){
 
       var latlng={lat: lat, lng: long};
       console.log(latlng);
-      rendermap(latlng);
+      rendermap(latlng,10);
       }
     function errorCallback(e) {
       alert(e);
-      var latlng = {lat:45, lng:122};
-      rendermap(latlng);
+      var latlng = {lat:38.016210, lng:-95.838746};
+      rendermap(latlng,4);
     }
   } else {
     alert("Geolocation is not supported by this browser.");
-    var latlng = {lat:45, lng:122};
-    rendermap(latlng);
+    var latlng = {lat:38.016210, lng:-95.838746};
+    rendermap(latlng,4);
   }
 }
