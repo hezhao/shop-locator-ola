@@ -29,7 +29,7 @@ h1{
 
 .storelocator-panel .store-list li.highlighted,
 .storelocator-panel .store-list li.highlighted:hover {
-  background: #aaf3e6;
+  background: #cff8e9;
 }
 
 .storelocator-panel .directions {
@@ -112,11 +112,11 @@ h1{
 }
 
 .store .web a {
-  color: #aaf3e6;
+  color: #45beaa;
 }
 
 .store .action {
   font-size: 0.8em;
-  color: #aaf3e6;
+  color: #45beaa;
   margin-right: 0.5em;
 }
