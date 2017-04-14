@@ -1,6 +1,12 @@
+h1{
+   font-family: "Source Sans Pro",sans-serif;
+   color:#45beaa;
+}
+
 .storelocator-panel {
-  border: 1px solid #ccc;
+  background: #f6f6f6;
   overflow: auto;
+  font-family: "Source Sans Pro",sans-serif;
 }
 
 .storelocator-panel .store-list {
@@ -23,7 +29,7 @@
 
 .storelocator-panel .store-list li.highlighted,
 .storelocator-panel .store-list li.highlighted:hover {
-  background: #ccf;
+  background: #aaf3e6;
 }
 
 .storelocator-panel .directions {
@@ -32,20 +38,32 @@
 
 .storelocator-panel .location-search {
   padding: 5px;
+
 }
 
 .storelocator-panel .location-search input {
   width: 95%;
+  border: none;
+  height: 40px;
+  padding-left:6px;
+  font-size: 24px;
+  font-family: "Source Sans Pro",sans-serif;
 }
 
 .storelocator-panel .location-search h4 {
   font-size: 0.8em;
-  margin: 0;
+  margin: 10px 0;
   padding: 0;
+  font-family: "Source Sans Pro",sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:#45beaa;
 }
 
 .storelocator-panel .store-list .no-stores {
-  color: grey;
+  color: #45beaa;
 }
 
 .storelocator-panel .store .features {
@@ -54,6 +72,7 @@
 
 .storelocator-panel .feature-filter {
   overflow: hidden;
+  margin-bottom: 7px;
 }
 
 .storelocator-panel .feature-filter label {
@@ -93,11 +112,11 @@
 }
 
 .store .web a {
-  color: green
+  color: #aaf3e6;
 }
 
 .store .action {
   font-size: 0.8em;
-  color: green;
+  color: #aaf3e6;
   margin-right: 0.5em;
 }
