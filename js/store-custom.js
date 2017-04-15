@@ -4,11 +4,11 @@
 // - custom info window content (+ store hours)
 ifrender = false;
 
-var ICON = new google.maps.MarkerImage('../img/olababy.png', null, null,
+var ICON = new google.maps.MarkerImage('../img/store-pin.png', null, null,
     new google.maps.Point(14, 13));
 
-var SHADOW = new google.maps.MarkerImage('medicare-shadow.png', null, null,
-    new google.maps.Point(14, 13));
+// var SHADOW = new google.maps.MarkerImage('../img/pinshadow.png', null, null,
+//     new google.maps.Point(14, 13));
 
 google.maps.event.addDomListener(window, 'load', function() {
   getLatlng();
@@ -112,7 +112,7 @@ var rendermap = function(latlng,scale){
 
   var panelDiv = document.getElementById('panel');
 
-  var data = new MedicareDataSource;
+  var data = new StoreDataSource;
 
   var view = new storeLocator.View(map, data, {
     geolocation: false,
@@ -123,7 +123,7 @@ var rendermap = function(latlng,scale){
     var markerOptions = {
       position: store.getLocation(),
       icon: ICON,
-      shadow: SHADOW,
+      // shadow: SHADOW,
       title: store.getDetails().title
     };
     return new google.maps.Marker(markerOptions);

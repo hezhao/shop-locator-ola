@@ -2,11 +2,11 @@
  * @extends storeLocator.StaticDataFeed
  * @constructor
  */
-function MedicareDataSource() {
+function StoreDataSource() {
   $.extend(this, new storeLocator.StaticDataFeed);
 
   var that = this;
-  $.get('ola.csv', function(data) {
+  $.get('static/store-data.csv', function(data) {
     that.setStores(that.parse_(data));
   });
 }
@@ -16,7 +16,7 @@ function MedicareDataSource() {
  * @type {!storeLocator.FeatureSet}
  * @private
  */
-MedicareDataSource.prototype.FEATURES_ = new storeLocator.FeatureSet(
+StoreDataSource.prototype.FEATURES_ = new storeLocator.FeatureSet(
   new storeLocator.Feature('Wheelchair-YES', 'Wheelchair access'),
   new storeLocator.Feature('Audio-YES', 'Audio')
 );
@@ -24,7 +24,7 @@ MedicareDataSource.prototype.FEATURES_ = new storeLocator.FeatureSet(
 /**
  * @return {!storeLocator.FeatureSet}
  */
-MedicareDataSource.prototype.getFeatures = function() {
+StoreDataSource.prototype.getFeatures = function() {
   return this.FEATURES_;
 };
 
@@ -33,7 +33,7 @@ MedicareDataSource.prototype.getFeatures = function() {
  * @param {string} csv
  * @return {!Array.<!storeLocator.Store>}
  */
-MedicareDataSource.prototype.parse_ = function(csv) {
+StoreDataSource.prototype.parse_ = function(csv) {
   var stores = [];
   var rows = csv.split('\n');
   var headings = this.parseRow_(rows[0]);
@@ -66,7 +66,7 @@ MedicareDataSource.prototype.parse_ = function(csv) {
  * @param {string} sep the separator.
  * @return {string}
  */
-MedicareDataSource.prototype.join_ = function(arr, sep) {
+StoreDataSource.prototype.join_ = function(arr, sep) {
   var parts = [];
   for (var i = 0, ii = arr.length; i < ii; i++) {
     arr[i] && parts.push(arr[i]);
@@ -81,7 +81,7 @@ MedicareDataSource.prototype.join_ = function(arr, sep) {
  * @param {string} row
  * @return {Array.<string>}
  */
-MedicareDataSource.prototype.parseRow_ = function(row) {
+StoreDataSource.prototype.parseRow_ = function(row) {
   // Strip leading quote.
   if (row.charAt(0) == '"') {
     row = row.substring(1);
@@ -104,7 +104,7 @@ MedicareDataSource.prototype.parseRow_ = function(row) {
  * @param {Array.<string>} row
  * @return {Object}
  */
-MedicareDataSource.prototype.toObject_ = function(headings, row) {
+StoreDataSource.prototype.toObject_ = function(headings, row) {
   var result = {};
   for (var i = 0, ii = row.length; i < ii; i++) {
     result[headings[i]] = row[i];
