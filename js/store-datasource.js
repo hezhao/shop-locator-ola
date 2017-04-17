@@ -46,12 +46,12 @@ StoreDataSource.prototype.parse_ = function(csv) {
 
     var position = new google.maps.LatLng(row.Latitude, row.Longitude);
 
-    var shop = this.join_([row.Shp_num_an, row.Shp_centre], ', ');
+    //var shop = this.join_([row.Shp_num_an, row.Shp_centre], ', ');
     var locality = this.join_([row.Locality, row.Postcode], ', ');
 
     var store = new storeLocator.Store(row.uuid, position, features, {
       title: row.Fcilty_nam,
-      address: this.join_([shop, row.Street_add, locality], '<br>'),
+      address: this.join_([row.Street_add, locality], '<br>'),
       phone: row.Phone
     });
     stores.push(store);
