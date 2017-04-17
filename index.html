@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Store locator with customisations</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhSWb5FU-CPURkIm2R79je4PZzR9yEp5k&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+    <script src="js/store-locator.min.js"></script>
+    <script src="js/store-datasource.js"></script>
+    <script src="js/store-custom.js"></script>
+    <link rel="stylesheet" href="css/store-locator.css">
+    <style>
+      body { font-family: sans-serif; }
+      #map-canvas, #panel { height: 500px; }
+      #panel { width: 300px; float: left; margin-right: 10px; }
+      #panel .feature-filter label { width: 130px; }
+      p.attribution, p.attribution a { color: #666; }
+      .store .hours { color: grey; }
+    </style>
+  </head>
+  <body>
+    <h1>Ola baby store finder</h1>
+    <div id="panel"></div>
+    <div id="map-canvas"></div>
+  </body>
+</html>
