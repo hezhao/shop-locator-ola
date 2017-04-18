@@ -33,12 +33,11 @@
 
 .storelocator-panel .location-search {
   padding: 5px 12px;
-  width: 204px;
 
 }
 
 .storelocator-panel .location-search input {
-  width: 95%;
+  width: 100%;
   border: none;
   height: 40px;
   padding-left:6px;
