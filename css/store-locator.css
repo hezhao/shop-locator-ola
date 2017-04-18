@@ -11,7 +11,7 @@
 
 .storelocator-panel .store-list li,
 .storelocator-panel .directions-panel {
-  padding: 5px;
+  padding: 5px 12px;
 }
 .storelocator-panel .directions-panel {
   font-size: 0.8em;
@@ -32,7 +32,8 @@
 }
 
 .storelocator-panel .location-search {
-  padding: 5px;
+  padding: 5px 12px;
+  width: 204px;
 
 }
 
@@ -115,3 +116,5 @@
   color: #45beaa;
   margin-right: 0.5em;
 }
+
+
